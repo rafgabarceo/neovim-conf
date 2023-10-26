@@ -23,7 +23,8 @@ require("lazy").setup({
 	{'neovim/nvim-lspconfig'},
 	{'hrsh7th/cmp-nvim-lsp'},
 	{'hrsh7th/nvim-cmp'},
-	{'L3MON4D3/LuaSnip'},
-	{'hrsh7th/nvim-cmp'}
+	{'L3MON4D3/LuaSnip', run = "make install_jsregexp"},
+	{'mfussenegger/nvim-lint'},
+	{'saadparwaiz1/cmp_luasnip'}
 })
 
