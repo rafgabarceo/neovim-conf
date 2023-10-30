@@ -25,6 +25,9 @@ require("lazy").setup({
 	{'hrsh7th/nvim-cmp'},
 	{'L3MON4D3/LuaSnip', run = "make install_jsregexp"},
 	{'mfussenegger/nvim-lint'},
-	{'saadparwaiz1/cmp_luasnip'}
+	{'saadparwaiz1/cmp_luasnip'},
+	{'windwp/nvim-autopairs', event = "InsertEnter", opts = {}},
+	{'windwp/nvim-ts-autotag'},
+	{'tpope/vim-surround'}
 })
 
