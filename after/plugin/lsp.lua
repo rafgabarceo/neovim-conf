@@ -1,11 +1,3 @@
-local lsp_zero = require('lsp-zero')
-
-lsp_zero.on_attach(function(client, bufnr)
-  -- see :help lsp-zero-keybindings
-  -- to learn the available actions
-  lsp_zero.default_keymaps({buffer = bufnr})
-end)
-
 require("mason").setup({}) 
 require("mason-lspconfig").setup(
 {
@@ -23,7 +15,23 @@ require("mason-lspconfig").setup(
 })
 
 require("lspconfig").svlangserver.setup({})
-require("lspconfig").gopls.setup({})
+
+-- Taken from https://github.com/neovim/nvim-lspconfig/issues/2733#issuecomment-1732637048
+local util = require'lspconfig.util'
+require("lspconfig").gopls.setup({
+   -- ...some other setups
+   root_dir = function(fname)
+      -- see: https://github.com/neovim/nvim-lspconfig/issues/804
+      local mod_cache = vim.trim(vim.fn.system 'go env GOMODCACHE')
+      if fname:sub(1, #mod_cache) == mod_cache then
+         local clients = vim.lsp.get_active_clients { name = 'gopls' }
+         if #clients > 0 then
+            return clients[#clients].config.root_dir
+         end
+      end
+      return util.root_pattern 'go.work'(fname) or util.root_pattern('go.mod', '.git')(fname)
+   end,
+})
 require("lspconfig").html.setup({})
 require("lspconfig").bashls.setup({})
 require("lspconfig").cssls.setup({})

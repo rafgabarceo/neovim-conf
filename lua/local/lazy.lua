@@ -28,6 +28,20 @@ require("lazy").setup({
 	{'saadparwaiz1/cmp_luasnip'},
 	{'windwp/nvim-autopairs', event = "InsertEnter", opts = {}},
 	{'windwp/nvim-ts-autotag'},
-	{'tpope/vim-surround'}
+	{'tpope/vim-surround'},
+	{
+	  "ray-x/go.nvim",
+	  dependencies = {  -- optional packages
+	    "ray-x/guihua.lua",
+	    "neovim/nvim-lspconfig",
+	    "nvim-treesitter/nvim-treesitter",
+	  },
+	  config = function()
+	    require("go").setup()
+	  end,
+	  event = {"CmdlineEnter"},
+	  ft = {"go", 'gomod'},
+	  build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
+	}
 })
 
