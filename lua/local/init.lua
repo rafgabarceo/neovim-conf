@@ -1,8 +1,11 @@
 -- General configuration
-vim.wo.relativenumber = true
-vim.wo.number = true
-vim.bo.softtabstop = 4
-vim.o.shiftwidth = 4
+vim.opt.relativenumber = true 
+vim.opt.number = true
+vim.opt.softtabstop = 4 
+vim.opt.shiftwidth = 4
+vim.opt.syntax = on
+vim.opt.smartindent = true
+vim.opt.autoindent = true
 
 require("local.remap")
 require("local.lazy")

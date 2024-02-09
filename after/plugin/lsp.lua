@@ -39,4 +39,6 @@ require("lspconfig").tsserver.setup({})
 require("lspconfig").pylsp.setup({})
 require("lspconfig").intelephense.setup({})
 require("lspconfig").clangd.setup({})
-
+require("lspconfig").dockerls.setup({})
+require("lspconfig").docker_compose_language_service.setup({})
+require("lspconfig").svelte.setup({});
