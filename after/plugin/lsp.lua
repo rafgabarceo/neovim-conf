@@ -2,7 +2,6 @@ require("mason").setup({})
 require("mason-lspconfig").setup(
 {
     ensure_installed = {
-	"svlangserver",
 	"gopls",
 	"html",
 	"bashls",
@@ -13,8 +12,6 @@ require("mason-lspconfig").setup(
 	"clangd"
     },
 })
-
-require("lspconfig").svlangserver.setup({})
 
 -- Taken from https://github.com/neovim/nvim-lspconfig/issues/2733#issuecomment-1732637048
 local util = require'lspconfig.util'
