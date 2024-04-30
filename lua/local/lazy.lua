@@ -29,6 +29,6 @@ require("lazy").setup({
 	{'windwp/nvim-autopairs', event = "InsertEnter", opts = {}},
 	{'windwp/nvim-ts-autotag'},
 	{'tpope/vim-surround'},
-	{"kkoomen/vim-doge", run = ':call doge#install'}
+	{"kkoomen/vim-doge", run = ':call doge#install'},
+	{"nvim-lualine/lualine.nvim", dependencies = {"nvim-tree/nvim-web-devicons", opt = true}}
 })
-
