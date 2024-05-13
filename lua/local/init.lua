@@ -1,8 +1,8 @@
 -- General configuration
 vim.opt.relativenumber = true 
 vim.opt.number = true
-vim.opt.softtabstop = 4 
-vim.opt.shiftwidth = 4
+vim.opt.softtabstop = 2 
+vim.opt.shiftwidth = 2
 vim.opt.syntax = on
 vim.opt.smartindent = true
 vim.opt.autoindent = true
